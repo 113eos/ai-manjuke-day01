@@ -54,11 +54,11 @@
 .nav{max-width:min(730px,58vw);overflow-x:auto;scrollbar-width:none;white-space:nowrap;gap:clamp(7px,.9vw,13px)}
 .nav::-webkit-scrollbar{display:none}
 .chapter-map{padding:0 0 46px}.chapter-map-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:14px}.chapter-map-head h2{font-size:24px;margin:0}.chapter-map-head p{margin:0;color:var(--muted);font-size:13px}.chapter-map-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.chapter-card{display:block;background:#fff;border:1px solid var(--rule);padding:13px 15px;min-height:84px;transition:.15s}.chapter-card:hover{border-color:var(--blue);transform:translateY(-2px)}.chapter-card small{display:block;font:10px var(--mono);color:var(--coral);margin-bottom:5px}.chapter-card b{font-size:13px;line-height:1.4}.chapter-card em{float:right;color:var(--blue);font:11px var(--mono);font-style:normal}.v3-section{padding:62px 0;border-top:1px solid var(--rule);scroll-margin-top:82px}
-.v3-topic{min-height:clamp(520px,70svh,800px);padding:clamp(30px,5vw,64px);background:#fff;border:1px solid var(--rule);border-top:4px solid var(--blue);display:flex;flex-direction:column;justify-content:center;position:relative}
+.v3-topic{min-height:520px;min-height:clamp(520px,70svh,800px);padding:34px;padding:clamp(30px,5vw,64px);background:#fff;border:1px solid #dbe0eb;border:1px solid var(--rule);border-top:4px solid #2455f5;border-top:4px solid var(--blue);display:flex;flex-direction:column;justify-content:center;position:relative}
 .v3-topic:nth-child(3n+2){border-top-color:var(--coral)}.v3-topic:nth-child(3n){border-top-color:#8caf00}
-.v3-topic h3{font-size:clamp(25px,2.7vw,38px);line-height:1.25;letter-spacing:-.045em;margin:0 0 13px;max-width:980px}
-.v3-topic .topic-lead{font-size:clamp(20px,1.85vw,27px);font-weight:780;line-height:1.5;color:var(--blue2);margin:0 0 28px;max-width:950px;padding:17px 20px;background:#edf0ff;border-left:5px solid var(--coral)}.v3-topic .topic-lead:before{content:'本页重点';display:block;font:700 10px var(--mono);letter-spacing:.12em;color:var(--coral);margin-bottom:6px}
-.v3-content{font-size:clamp(16px,1.2vw,18px);line-height:1.8;color:#202a40;max-width:1080px}.v3-content h3{max-width:920px}.v3-content strong{font-size:1.06em;font-weight:800}
+.v3-topic h3{font-size:32px;font-size:clamp(25px,2.7vw,38px);line-height:1.25;letter-spacing:-.045em;margin:0 0 13px;max-width:980px}
+.v3-topic .topic-lead{font-size:22px;font-size:clamp(20px,1.85vw,27px);font-weight:780;line-height:1.5;color:var(--blue2);margin:0 0 28px;max-width:950px;padding:17px 20px;background:#edf0ff;border-left:5px solid var(--coral)}.v3-topic .topic-lead:before{content:'本页重点';display:block;font:700 10px var(--mono);letter-spacing:.12em;color:var(--coral);margin-bottom:6px}
+.v3-content{font-size:17px;font-size:clamp(16px,1.2vw,18px);line-height:1.8;color:#202a40;max-width:1080px}.v3-content h3{max-width:920px}.v3-content strong{font-size:1.06em;font-weight:800}
 .v3-content p{margin:10px 0 14px;max-width:1000px}.v3-content strong{color:var(--blue2)}
 .v3-content ul,.v3-content ol{padding-left:1.35em;margin:12px 0 18px}.v3-content li{padding:4px 0}
 .v3-content blockquote{margin:14px 0;padding:17px 20px;background:#edf0ff;border-left:3px solid var(--blue);color:#34405c}
@@ -87,6 +87,24 @@ body.directory-visible:before{content:"";position:fixed;inset:0;background:#1019
 #topic-directory:not(.is-open){display:none}
 @media(max-width:900px){.nav{display:none}.chapter-map-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.v3-topic{min-height:62svh}.v3-section{padding:48px 0}.head{display:block}.head p{margin-top:8px}
 @media(max-width:650px){.chapter-map-head{display:block}.chapter-map-head p{margin-top:7px}.chapter-map-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.chapter-card{padding:10px;min-height:82px}.chapter-card b{font-size:12px}.v3-topic{min-height:58svh;padding:24px 18px}.v3-topic .topic-lead{font-size:19px;padding:14px 15px}.v3-topic h3{font-size:24px}.v3-grid.cols-2,.v3-grid.cols-3,.v3-links{grid-template-columns:1fr}.v3-table{font-size:12px}.v3-table th,.v3-table td{padding:8px}.v3-route,.v3-equation{gap:5px;padding:12px}.chapter-nav{right:10px;bottom:10px}.chapter-nav button{padding:7px 8px;font-size:11px}
+
+/* Legacy browser fallbacks: preserve colors and structure if advanced CSS is unsupported. */
+body{background:#f5f6f9;color:#111728;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+.bar{background:#f5f6f9}.mark,.btn{background:#2455f5;color:#fff}.badge{background:#d9f46b;color:#111728}
+.hero h1 span,.kicker,.minor{color:#2455f5}.manifesto{background:#2455f5;color:#fff}.manifesto h2 em,.manifesto .eyebrow{color:#d9f46b}
+.chapter-map-grid,.v3-grid,.v3-links{display:flex;flex-wrap:wrap}
+.chapter-card{display:block;flex:1 1 21%;min-width:165px;background:#fff;border:1px solid #dbe0eb}
+.v3-grid article{flex:1 1 40%;min-width:220px;background:#f5f6fa;border-left:3px solid #2455f5}
+.v3-topic{background:#fff;border:1px solid #dbe0eb;border-top:4px solid #2455f5;min-height:520px;padding:34px}
+.v3-topic:nth-child(3n+2){border-top-color:#ff6247}.v3-topic:nth-child(3n){border-top-color:#8caf00}
+.v3-topic h3{font-size:32px;color:#111728}.v3-topic .topic-lead{font-size:22px;color:#102f9e;background:#edf0ff;border-left:5px solid #ff6247}
+.v3-content{font-size:17px;color:#202a40}.v3-content strong{color:#102f9e}
+.v3-topic-meta{color:#2455f5}.v3-table{background:#fff}.v3-table th{background:#e9edff;color:#102f9e}
+.v3-callout{background:#e9edff;border-left:3px solid #2455f5;color:#2f3a56}
+.v3-route,.v3-equation{background:#edf0ff;color:#102f9e}
+.v3-links a{background:#fff;border:1px solid #dbe0eb;color:#2455f5}
+@supports (display:grid){.chapter-map-grid{display:grid}.v3-grid{display:grid}.v3-links{display:grid}
+@media(max-width:650px){.chapter-card{flex-basis:44%;min-width:120px}.v3-grid article{flex-basis:100%;min-width:0}.v3-topic{padding:24px 18px}.v3-topic h3{font-size:24px}.v3-topic .topic-lead{font-size:19px}
 </style></head>
 <body>
 <header class="bar"><div class="barin"><a class="logo" href="#top"><span class="mark">AI</span><span>AI 漫剧课</span></a><nav class="nav v3-nav" aria-label="课程章节"><a href="#start">课程目标</a><a href="#route">章节地图</a><a href="#components">生成组成</a><a href="#modes">生成方式</a><a href="#workflow">生成流程</a><a href="#tools">平台与模型</a><a href="#prompt">七项提示词</a><a href="#prompt-extra">声音与约束</a><a href="#game">片场小游戏</a><a href="#practice">四轮实操</a><a href="#storyboard">故事板</a><a href="#homework">作业与衔接</a></nav><button class="directory-open" id="directory-open" type="button">全部主题</button><span class="badge">DAY 01 · V3</span></div></header>
@@ -98,15 +116,20 @@ body.directory-visible:before{content:"";position:fixed;inset:0;background:#1019
 </main>
 <footer class="wrap foot"><span><b>AI 漫剧课</b></span><span>第一天 V3 · 视频生成与导演故事板</span><span>第一天课程学习页</span></footer>
 <div class="topic-directory" id="topic-directory" role="dialog" aria-modal="true" aria-labelledby="directory-title" hidden><div class="directory-head"><h2 id="directory-title">第一天 V3 · 主题目录</h2><button class="directory-close" id="directory-close" type="button">关闭</button></div><div class="directory-list" id="directory-list"></div></div>
+<noscript><div class="wrap v3-callout">启用浏览器 JavaScript 后可使用逐页翻阅和目录跳转；课程内容仍完整保留在本页。</div></noscript>
 <nav class="chapter-nav" aria-label="主题翻阅"><button id="chapter-prev" type="button" aria-label="上一页">← 上一页</button><span id="chapter-count" aria-live="polite">01 / --</span><button id="chapter-next" type="button" aria-label="下一页">下一页 →</button></nav>
 <script>
 (function(){
+ if(!String.prototype.padStart)String.prototype.padStart=function(n,ch){var s=String(this),f=ch||' ';while(s.length<n)s=f+s;return s};
+ if(!Array.prototype.find)Array.prototype.find=function(fn,ctx){for(var i=0;i<this.length;i++)if(fn.call(ctx,this[i],i,this))return this[i]};
+ if(!Array.prototype.findIndex)Array.prototype.findIndex=function(fn,ctx){for(var i=0;i<this.length;i++)if(fn.call(ctx,this[i],i,this))return i;return -1};
+ if(typeof NodeList!=='undefined'&&!NodeList.prototype.forEach)NodeList.prototype.forEach=Array.prototype.forEach;
+ if(typeof Element!=='undefined'&&!Element.prototype.closest)Element.prototype.closest=function(sel){var el=this;while(el&&el.nodeType===1){var m=el.matches||el.msMatchesSelector||el.webkitMatchesSelector;if(m&&m.call(el,sel))return el;el=el.parentElement}return null};
  var sections=Array.prototype.slice.call(document.querySelectorAll('main .v3-section[id]'));
  var topics=Array.prototype.slice.call(document.querySelectorAll('[data-topic]'));
  var directory=document.getElementById('topic-directory'),list=document.getElementById('directory-list');
  var count=document.getElementById('chapter-count'),prev=document.getElementById('chapter-prev'),next=document.getElementById('chapter-next'),progress=document.getElementById('reading-progress');
  var current=0,groups={},related={start:['route','components'],route:['components','modes'],components:['modes','workflow'],modes:['workflow','tools'],workflow:['tools','prompt'],tools:['prompt','practice'],prompt:['prompt-extra','game'], 'prompt-extra':['game','practice'],game:['practice','storyboard'],practice:['storyboard','homework'],storyboard:['homework','start'],homework:['start','route']};
- document.body.className+=' js-enabled';
  for(var i=0;i<topics.length;i++){var section=topics[i].closest('.v3-section'),id=section.id,title=topics[i].getAttribute('data-title');topics[i].id='topic-'+String(i+1).padStart(2,'0');topics[i].setAttribute('data-index',i);if(!groups[id])groups[id]={section:section,title:section.querySelector('.head h2').textContent,label:section.querySelector('.minor').textContent,topics:[]};groups[id].topics.push({topic:topics[i],index:i,title:title})}
  Object.keys(groups).forEach(function(id,chapterIndex){var g=groups[id],box=document.createElement('section');box.className='directory-group';var h=document.createElement('h3');h.textContent=g.label+' · '+g.title+' · '+g.topics.length+' 个主题';box.appendChild(h);g.topics.forEach(function(x,localIndex){var a=document.createElement('a'),n=document.createElement('small'),s=document.createElement('span');a.href='#'+x.topic.id;n.textContent=String(chapterIndex+1).padStart(2,'0')+'.'+String(localIndex+1).padStart(2,'0');s.textContent=x.title;a.appendChild(n);a.appendChild(s);box.appendChild(a)});list.appendChild(box);var card=document.createElement('a');card.className='chapter-card';card.href='#'+g.topics[0].topic.id;card.innerHTML='<small>'+g.label+'</small><b>'+g.title+'</b><em>'+g.topics.length+' 题 ↗</em>';document.getElementById('chapter-map-grid').appendChild(card)});
  function activate(index,scroll){current=Math.max(0,Math.min(topics.length-1,index));var topic=topics[current],section=topic.closest('.v3-section');sections.forEach(function(s){s.hidden=s!==section});topics.forEach(function(t){var on=t===topic;t.hidden=!on;t.setAttribute('aria-current',on?'page':'false');var m=t.querySelector('.v3-topic-meta');if(m)m.remove();var r=t.querySelector('.v3-related');if(r)r.remove()});
@@ -124,7 +147,7 @@ body.directory-visible:before{content:"";position:fixed;inset:0;background:#1019
  document.addEventListener('click',function(e){var a=e.target.closest('a[data-topic-link]');if(!a)return;var idx=topics.findIndex(function(t){return '#'+t.id===a.getAttribute('href')});if(idx>=0){e.preventDefault();activate(idx,true)}});
  document.addEventListener('click',function(e){var b=e.target.closest('button[data-copy]');if(!b)return;var el=document.getElementById(b.getAttribute('data-copy'));if(!el)return;var text=el.innerText;function done(){var old=b.textContent;b.textContent='已复制';setTimeout(function(){b.textContent=old},1200)}if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(text).then(done).catch(function(){b.textContent='请手动选择复制'});else b.textContent='请手动选择复制'});
  window.addEventListener('keydown',function(e){if(!directory.hidden){if(e.key==='Escape')closeDirectory();return}if(/INPUT|TEXTAREA/.test(document.activeElement.tagName))return;if(e.key==='ArrowRight'||e.key==='PageDown')activate(current+1,true);if(e.key==='ArrowLeft'||e.key==='PageUp')activate(current-1,true)});
- var idx=topics.findIndex(function(t){return '#'+t.id===location.hash});activate(idx>=0?idx:0,false)
+ var idx=topics.findIndex(function(t){return '#'+t.id===location.hash});activate(idx>=0?idx:0,false);document.body.className+=' js-enabled'
 })();
 </script>
 </body></html>
