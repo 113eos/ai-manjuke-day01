@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>导演小剧场｜晚饭这一场（投屏卡）</title>
+<style>
+  :root { --bg:#0f1116; --fg:#f6f1e8; --muted:#c9c1b4; --line:#3c414c; --acc:#e8c07a; --card:#171b22; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--fg);
+    font-family:"PingFang SC","Hiragino Sans GB","Heiti SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;
+    overflow:hidden; }
+  .slide { display:none; height:100%; padding:3.4vh 5.2vw 9.5vh; overflow:auto; }
+  .slide.on { display:block; }
+  .card-label { display:inline-block; color:var(--bg); background:var(--acc); font-size:clamp(13px,1.4vw,20px);
+    letter-spacing:.14em; padding:.18em .7em; border-radius:999px; font-weight:600; margin-bottom:1.1vh; }
+  h1 { font-size:clamp(30px,4.4vw,60px); font-weight:600; margin:.15em 0 .35em; letter-spacing:.03em; }
+  h2 { font-size:clamp(24px,3.1vw,42px); font-weight:600; margin:0 0 .55em; }
+  p,li { font-size:clamp(17px,2.05vw,32px); line-height:1.55; }
+  .lead { color:var(--muted); max-width:38em; margin:0 0 1em; }
+  ul { margin:.15em 0 .2em; padding-left:1.15em; }
+  li { margin:.22em 0; }
+  .purpose { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:1.15em 1.3em; max-width:40em; }
+  .purpose p { margin:.4em 0; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:1.4vw 2.2vw; }
+  .box { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:1em 1.15em; }
+  .box h3 { margin:0 0 .45em; font-size:clamp(18px,2.1vw,30px); color:var(--acc); font-weight:600; }
+  table { width:100%; border-collapse:collapse; font-size:clamp(15px,1.75vw,26px); }
+  th,td { border-bottom:1px solid var(--line); text-align:left; vertical-align:top; padding:.55em .45em; line-height:1.45; }
+  th { color:var(--acc); font-weight:600; }
+  .num { color:var(--acc); font-weight:600; }
+  .nav { position:fixed; left:0; right:0; bottom:0; height:7.6vh; display:flex; align-items:center; justify-content:space-between;
+    padding:0 2.4vw; background:linear-gradient(transparent, #0b0d11 40%); font-size:clamp(13px,1.3vw,18px); color:var(--muted); }
+  .dots { display:flex; gap:.5em; align-items:center; }
+  .dot { width:10px; height:10px; border-radius:50%; background:#4a4e58; }
+  .dot.on { background:var(--acc); }
+  @media (max-width:900px){ .grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+<section class="slide on">
+  <div class="card-label">第一张 · 用途</div>
+  <h1>导演小剧场用来做什么</h1>
+  <div class="purpose">
+    <p>这不是表演课，是为了夯实镜头语言，以及提示词里的七项加声音。</p>
+    <p>请同学走上片场，用导演的身份把一场戏演出来。演完再对回去：刚才每个岗位做的事，分别对应提示词的哪一项。</p>
+    <p>这样再去理解 AI 生成视频，就会更容易上手：模型执行的是我们先想清楚的画面要求。</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="card-label">第二张 · 需要哪些人</div>
+  <h1>请这些同学上场</h1>
+  <div class="grid">
+    <div class="box">
+      <h3>必须上场</h3>
+      <ul>
+        <li>男主、女主：一对夫妻，分坐桌子两头</li>
+        <li>打电话的人：坐在台下，不要走进画面</li>
+        <li>摄影机位一、摄影机位二：两个人，站在指定位置</li>
+        <li>灯光师、服化道</li>
+        <li>导演：拿下一张导演卡说戏；讲师自己说也可以</li>
+        <li>场记：拍板，喊 Action 和 Cut</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>现场还要这些东西</h3>
+      <ul>
+        <li>一张桌子，两端各一把椅子</li>
+        <li>杯子或餐具，看起来像刚吃完饭</li>
+        <li>男主的手机：铃声打开，先不要静音</li>
+        <li>一个包：按静音时伸手进去用</li>
+        <li>灯光先用教室现有的灯，由灯光师口头说明</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="card-label">第三张 · 导演卡</div>
+  <h1>晚饭这一场</h1>
+  <p class="lead">规定情境：一对夫妻分坐桌子两头，刚吃完，没怎么说话，像一对老夫老妻。定调是暗流涌动、心怀鬼胎，表面上却很平静。</p>
+  <div class="grid">
+    <div class="box">
+      <h3>按这个顺序抓住画面</h3>
+      <ul>
+        <li><span class="num">1.</span> 两人分坐两端，饭桌沉默</li>
+        <li><span class="num">2.</span> 男主裤兜里的手机响了（台下同学真的打过来）</li>
+        <li><span class="num">3.</span> 男主悄悄伸手进包里，把电话按成静音</li>
+        <li><span class="num">4.</span> 他有点心虚，看了女主一眼</li>
+        <li><span class="num">5.</span> 女主神游在外，根本没看见这个表情</li>
+        <li><span class="num">6.</span> 男主悄悄舒了口气</li>
+        <li><span class="num">7.</span> 女主突然说一句完全出乎意料的台词——由演女主的同学自己发挥</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>怎么演、摄像机怎么摆</h3>
+      <p><b>男主：</b>表面还是吃饭不说话的丈夫。手机一响，重点是「不能让她发现」——动作要小、要藏。按静音之后心虚看一眼；确认她没看见，才敢舒口气。不要演得夸张。</p>
+      <p><b>女主：</b>神游在外，注意力不在他身上，不要去盯他的手或脸。最后那句台词自己发挥，要来得突然，像完全没在刚才那套小心思里。</p>
+      <p><b>机位一：</b>固定，中全景或中景，能同时看见两人分坐，先建立沉默的饭桌关系。</p>
+      <p><b>机位二：</b>先给男主——看见他按手机、偷偷看她；他舒口气之后，把画面给到女主开口。</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="card-label">第四张 · 对回七项加声音</div>
+  <h2>现场岗位，就是提示词要写的内容</h2>
+  <table>
+    <thead><tr><th>现场岗位</th><th>这场戏里做什么</th><th>对回提示词</th></tr></thead>
+    <tbody>
+      <tr><td>男主、女主</td><td>人物是谁、怎么坐、怎么演、视线看向哪里</td><td>主体；动作与表演</td></tr>
+      <tr><td>服化道</td><td>桌椅当餐厅，杯子、包、手机是道具；造型就用身上这身衣服</td><td>主体；场景与环境；风格与质感</td></tr>
+      <tr><td>导演</td><td>说清要让观众看见什么，检查大家演的是不是同一场戏</td><td>把七项组织到一起，并检查结果</td></tr>
+      <tr><td>摄影机位一</td><td>固定机位，看清两人关系和构图</td><td>镜头语言：景别、机位、构图</td></tr>
+      <tr><td>摄影机位二</td><td>抓住按手机、偷瞄、舒气和女主开口</td><td>镜头语言：机位变化、对焦对象；时间与节奏</td></tr>
+      <tr><td>灯光师</td><td>整体偏暗，像心里有事的晚饭，不要太亮太热闹</td><td>光影与色调；风格与质感里的气氛</td></tr>
+      <tr><td>打电话的人、声音协助</td><td>铃声何时出现；女主台词何时说；要不要环境声</td><td>声音栏（按需）：铃音、对白、环境声</td></tr>
+    </tbody>
+  </table>
+  <p class="lead" style="margin-top:.9em;">到了 AI 生成视频，这些要求分别变成参考资产和视频提示词。导演先想清楚要表达什么，再组织各岗位一起完成。</p>
+</section>
+
+<section class="slide">
+  <div class="card-label">第五张 · 怎么走、演完问什么</div>
+  <h1>现场流程和复盘</h1>
+  <div class="grid">
+    <div class="box">
+      <h3>现场怎么走</h3>
+      <ul>
+        <li>按第二张认领角色，导演用第三张导演卡说戏</li>
+        <li>先问：这一场里，哪一个画面最需要让观众看见？</li>
+        <li>演员复述动作、站位、朝向和表演状态</li>
+        <li>机位一说明固定构图，机位二说明重点画面怎么给</li>
+        <li>灯光师说明光线，声音协助说明铃声和台词出现的时刻</li>
+        <li>导演确认大家理解同一场戏，场记拍板，喊 Action</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>演完问学生</h3>
+      <ul>
+        <li>刚才哪一项是主体？哪一段是动作与表演？</li>
+        <li>镜头语言分别在两个机位上怎么安排的？</li>
+        <li>手机铃、女主台词，分别对应声音栏的哪一刻？</li>
+        <li>场面够不够暗、像不像心里有事？这是光影与色调吗？</li>
+        <li>如果写成一条视频提示词，哪些岗位的信息必须合在一起？</li>
+        <li>这一场里，哪一个画面是最需要让观众看见的？</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</div>
+<div class="nav">
+  <div>← → 或点击左右翻页 · 打开后按 F11 全屏投屏</div>
+  <div class="dots" id="dots"></div>
+  <div id="page">1 / 5</div>
+</div>
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const dots=document.getElementById('dots');
+  const page=document.getElementById('page');
+  slides.forEach(()=>{ const d=document.createElement('div'); d.className='dot'; dots.appendChild(d); });
+  let i=0;
+  function show(n){
+    i=(n+slides.length)%slides.length;
+    slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+    [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i));
+    page.textContent=(i+1)+' / '+slides.length;
+  }
+  show(0);
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' ') { e.preventDefault(); show(i+1); }
+    if(e.key==='ArrowLeft'||e.key==='PageUp') { e.preventDefault(); show(i-1); }
+  });
+  document.addEventListener('click',e=>{
+    if(e.target.closest('.nav')) return;
+    show(e.clientX>innerWidth/2?i+1:i-1);
+  });
+</script>
+</body>
+</html>
